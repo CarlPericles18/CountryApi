@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    margin: 0
+}
+
+.NavLinks{
+
+}
+.Container{
+    cursor: pointer;
+    margin: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 2px rgba(148,148,148,1);
+    -moz-box-shadow: 0px 0px 11px 2px rgba(148,148,148,1);
+     box-shadow: 0px 0px 11px 2px rgb(235, 235, 235);
+}
+.flagContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 5px;
+    
+    
+}
+.flagImg{
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+.countriesInfo h2{
+    margin-bottom:20px;
+}
+.countriesInfo{
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    margin-left: 20px;
+    margin-bottom: 60px;
+    line-height: 25px;
+}
+.information{
+    font-weight: 100;
+}
+.NavLinks{
+    color:inherit;
+    margin:inherit ;
+    padding: inherit;
+}
+.CountryName{
+    margin-top: 20px;
+}
