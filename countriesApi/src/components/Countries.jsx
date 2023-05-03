@@ -23,7 +23,7 @@ export default function Countries(){
                 <div className="flagContainer">
                     <img className="flagImg" src={countriesMapped.flag}></img>
                     <div className="countriesInfo">
-                                <h2>{countriesMapped.name}</h2>
+                                <h2  className='CountryName'>{countriesMapped.name}</h2>
                         <div>
                             <div>
                                 <h4>Native Name: <span className="information">{countriesMapped.nativeName}</span></h4>
