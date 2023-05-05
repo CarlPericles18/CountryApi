@@ -3,11 +3,8 @@
     margin: 0
 }
 
-.NavLinks{
 
-}
-.Container{
-    cursor: pointer;
+.Containers{
     margin: 60px;
     display: flex;
     flex-direction: column;
@@ -15,8 +12,14 @@
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 11px 2px rgba(148,148,148,1);
     -moz-box-shadow: 0px 0px 11px 2px rgba(148,148,148,1);
-     box-shadow: 0px 0px 11px 2px rgb(235, 235, 235);
+     box-shadow: 0px 0px 11px 2px rgb(216, 216, 216);
 }
+.darkC{
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0px ;
+
+}
+
 .flagContainer{
     display: flex;
     flex-direction: column;
@@ -49,4 +52,54 @@
 }
 .CountryName{
     margin-top: 20px;
+}
+.secondContainer{
+    margin-top:30px;
+    margin-bottom: 20px;
+}
+.borderDiv{
+    display: flex;
+    gap: 10px;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px 5px;
+    margin-top: 5px;
+}
+
+.borderCountries{
+    margin-top:40px
+
+}
+.BackBtn{
+    cursor: pointer;
+    background: url(../../public/images/left-arrow.png)no-repeat scroll 3px 2px;
+    background-size: 24px;
+    margin: 40px 0 0 60px;
+    padding: 5px 30px 5px 30px ;
+    font-size: 15px;
+    background-color: white;
+    color:black;
+    border: 0;
+    border-radius:5px;
+    -webkit-box-shadow: 0px 0px 15px -1px rgba(143,137,143,1);
+    -moz-box-shadow: 0px 0px 15px -1px rgba(143,137,143,1);
+    box-shadow: 0px 0px 15px -4px rgba(143,137,143,1);
+}
+.borderDivTwo{
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size:10px;
+    padding: 0px 40px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(158,158,158,1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(158,158,158,1);
+    box-shadow: 0px 0px 10px 0px rgb(209, 209, 209);
+}
+.darkBorderDivTwo{
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size:10px;
+    padding: 0px 40px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(158,158,158,1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(158,158,158,1);
+    box-shadow: 0px 0px 5px -1px rgb(3, 3, 3);
 }

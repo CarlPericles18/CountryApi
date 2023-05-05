@@ -2,20 +2,15 @@ import { NavLink,Outlet, useParams } from "react-router-dom"
 import data from "../data"
 
 
-export default function Countries(){
+export default function Countries(props){
     const {name} = useParams();
-    let text = ""
-    const boxFunc = (ele, index)=>{
-        return(
-           <div>{text += index + ":" + ele}</div>
-        )
-    }
+
     return(
-        <div>
-            <div>
-                <NavLink to='/'><button>Back</button></NavLink>
+        <div className={props.darkMode ? "darkC":""}>
+            <div >
+                <NavLink to='/'><button className='BackBtn'>Back</button></NavLink>
             </div>
-           <div  className="Container">
+           <div className={props.darkMode ? "DarkCont":"Containers"}>
                 {
                     data.filter((items)=>items.name === name)
                     .map((countriesMapped)=>{
@@ -32,14 +27,20 @@ export default function Countries(){
                                 <h4>Sub Region: <span className="information">{countriesMapped.subregion}</span></h4>
                                 <h4>Capital: <span className="information">{countriesMapped.capital}</span></h4>
                             </div>
-                            <div>
+                            <div className="secondContainer">
                                 <h4>Top Level Domain: <span className="information">{countriesMapped.topLevelDomain}</span></h4>
-                                <h4>Currencies: <span className="information"></span></h4>
-                                <h4>Languages: <span className="information"></span></h4>
+                                <h4>Currencies: <span className="information">{countriesMapped.currencies.map((x)=>{return x.name})}</span></h4>
+                                <h4>Languages: <span className="information">{countriesMapped.languages.map((x)=>{return x.name}).toLocaleString()}</span></h4>
                             </div>
                             <span>
-                                Border Countries:
-                                <div></div>
+                                <h3>Border Countries:</h3>
+                                <div className="borderDiv">{countriesMapped.borders ? countriesMapped.borders.map((x)=>{
+                                        
+
+                                    return <NavLink to={`/Countries/${countriesMapped.name}`}><div className={props.darkMode? "darkBorderDivTwo":"borderDivTwo"}>
+                                                        {x}
+                                            </div></NavLink>
+                                }): "N/A"}</div>
                             </span>
                         </div>
                     </div>

@@ -41,23 +41,24 @@ export default function App() {
   createRoutesFromElements(
     <Route>
         <Route index element={ <Body
+          toggleDropDown = {toggleDropDown}
           dropDown = {dropDown}
-          toggleDropDown={toggleDropDown}
+          darkMode = {darkMode}
         />}>
         </Route>
-
-        <Route path='/Countries/:name' element={<Countries data={data}/> }/>
+        <Route path='/Countries/:name' element={<Countries data={data} darkMode = {darkMode} /> }/>
     </Route>
   )
  )
 
   return (
-      <div>
+      <div className='body'>
         <NavBar
           darkMode={darkMode}
           toggleDarkMode={toggleDarkMode}
         />
-        <RouterProvider router={router} />
+        <RouterProvider router={router}
+        />
         </div>
   )
 }
