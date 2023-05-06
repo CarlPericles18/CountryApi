@@ -17,7 +17,6 @@ export default function Body(props){
 
     const active = props.dropDown ? "Region-Active" : "Region-DeActive"
     return (
-
         <div className={props.darkMode ? "darkBody":"containers"}>
             <div className="desktopSearchSplit">
                 <div className="countryFilter">
@@ -26,7 +25,7 @@ export default function Body(props){
                     />
                 </div>
                 <div className={props.darkMode? "darkRegion":"region"} onClick={props.toggleDropDown}>Filter by Region
-                        <div><img className="arrowDown" src={props.darkMode ? "../../public/images/arrow-White-xxl.png":"../../public/images/icons8-down-24.png"} alt="downArrow"></img></div>
+                        <div><img className="arrowDown" src={props.darkMode ? "../public/images/arrow-White-xxl.png":"../public/images/icons8-down-24.png"} alt="downArrow"></img></div>
                 </div>
             </div>
                 <div className={props.darkMode ? "darkRegionFil" : "regionFilter"}>
