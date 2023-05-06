@@ -1,26 +1,44 @@
 *{
     box-sizing: border-box;
-    margin: 0
+    margin: 0;
+
+}
+.body{
+    margin: 0px;
+    min-height: 100%;
+    width: 100%;
 }
 
-
-.Containers{
-    margin: 60px;
+.ContainersCountries{
     display: flex;
+    margin: 60px 60px 20px 60px;
     flex-direction: column;
     gap: 30px;
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 11px 2px rgba(148,148,148,1);
     -moz-box-shadow: 0px 0px 11px 2px rgba(148,148,148,1);
      box-shadow: 0px 0px 11px 2px rgb(216, 216, 216);
-}
+    }
+
 .darkC{
-    background-color: hsl(209, 23%, 22%);
     box-shadow: 0px ;
-
+    background-color:hsl(207, 26%, 17%) ;
+    padding-bottom: 10px;
+}
+.DarkContCountries{
+    margin: 60px 60px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    gap: 30px;
+    -webkit-box-shadow: 0px 0px 11px 2px rgba(148,148,148,1);
+    -moz-box-shadow: 0px 0px 11px 2px rgba(148,148,148,1);
+     box-shadow: 0px 0px 11px -10px rgb(0, 0, 0);
+     background-color: hsl(209, 23%, 22%);
+     color: white;
 }
 
-.flagContainer{
+.flagContainerCountries{
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -28,18 +46,17 @@
     
     
 }
-.flagImg{
+.flagImgTwo{
     width: 100%;
     border-radius: 5px 5px 0 0;
 }
-.countriesInfo h2{
+.countriesInfoTwo h2{
     margin-bottom:20px;
 }
-.countriesInfo{
+.countriesInfoTwo{
     font-family: 'Inter', sans-serif;
     font-size: 13px;
     margin-left: 20px;
-    margin-bottom: 60px;
     line-height: 25px;
 }
 .information{
@@ -54,13 +71,13 @@
     margin-top: 20px;
 }
 .secondContainer{
-    margin-top:30px;
+    maflexrgin-top:30px;
     margin-bottom: 20px;
 }
 .borderDiv{
     display: flex;
-    gap: 10px;
     overflow: auto;
+    gap: 10px;
     white-space: nowrap;
     padding: 10px 5px;
     margin-top: 5px;
@@ -68,7 +85,6 @@
 
 .borderCountries{
     margin-top:40px
-
 }
 .BackBtn{
     cursor: pointer;
@@ -102,4 +118,39 @@
     -webkit-box-shadow: 0px 0px 10px 0px rgba(158,158,158,1);
     -moz-box-shadow: 0px 0px 10px 0px rgba(158,158,158,1);
     box-shadow: 0px 0px 5px -1px rgb(3, 3, 3);
+}
+@media screen and (min-width: 880px){
+    .flagContainerCountries{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        }
+   
+    .divImg{
+        width:100%;
+        height:auto;
+    }
+    .flagImgTwo{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+      }
+     .InfoDiv{
+        display: flex;
+        justify-content:space-between;
+     }
+     .countriesInfoTwo{
+        width: 600px;
+
+     }
+     .secondContainer{
+        margin-top: -3px;
+     }
+     .spanBorders{
+        margin-top:20px;
+     }
+     .darkC{
+        padding-bottom: 30%;
+
+     }
+   
 }

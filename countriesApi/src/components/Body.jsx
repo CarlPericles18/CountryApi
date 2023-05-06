@@ -18,17 +18,18 @@ export default function Body(props){
     const active = props.dropDown ? "Region-Active" : "Region-DeActive"
     return (
 
-        <div className={props.darkMode ? "darkBody":"container"}>
-            <div className="countryFilter">
-                <input className={props.darkMode? "searchBarDark":"searchBar"} type="text" placeholder="Search for a country..." onChange={(event) =>
-                    setCountrySearch(event.target.value)}
-                />
-            </div>
-            <div className={props.darkMode ? "darkRegionFil" : "regionFilter"}>
+        <div className={props.darkMode ? "darkBody":"containers"}>
+            <div className="desktopSearchSplit">
+                <div className="countryFilter">
+                    <input className={props.darkMode? "searchBarDark":"searchBar"} type="text" placeholder="Search for a country..." onChange={(event) =>
+                        setCountrySearch(event.target.value)}
+                    />
+                </div>
                 <div className={props.darkMode? "darkRegion":"region"} onClick={props.toggleDropDown}>Filter by Region
-                    <div><img className="arrowDown" src={props.darkMode ? "../../public/images/arrow-White-xxl.png":"../../public/images/icons8-down-24.png"} alt="downArrow"></img></div>
-                        </div>
-                            
+                        <div><img className="arrowDown" src={props.darkMode ? "../../public/images/arrow-White-xxl.png":"../../public/images/icons8-down-24.png"} alt="downArrow"></img></div>
+                </div>
+            </div>
+                <div className={props.darkMode ? "darkRegionFil" : "regionFilter"}>
                                 <div  className={
                                     `${props.dropDown ? "Region-Active" : "Region-DeActive"} ${props.darkMode ? "darkAct" : "dark-deAct"}`
                                     }>
@@ -41,8 +42,8 @@ export default function Body(props){
                                         <div><button onClick={()=>filterItems("Oceania")}>Oceania</button></div>
                                     </div>
                                 </div>
-            </div>
-            <div>
+                </div>
+            <div className={props.darkMode ? 'desktopContainerDark':'desktopContainer'}>
                 {countryFilter.filter((fil) => {
                   if(countrySearch == ""){
                     return fil;
@@ -52,25 +53,24 @@ export default function Body(props){
                 })
                 .map((countries)=>{
                     return(
-                        <div  className={props.darkMode ? "DarkCont":"Container"}>
+                            <div  className={props.darkMode ? "DarkCont":"Container"}>
                                 <div className="flagContainer">
-                                <NavLink className="NavLinks" to={`/Countries/${countries.name}`}><img className="flagImg" src={countries.flags.svg}></img>
+                                <NavLink className="NavLinks" to={`/Countries/${countries.name}`}><div className="homeImg"><img className="flagImg" src={countries.flags.svg}></img></div>
                                 <div className="countriesInfo">
                                         <h2 className='CountryName'>{countries.name}</h2>
                                         <h4>Population: <span className="information">{countries.population.toLocaleString()}</span></h4>
                                         <h4>Region: <span className="information">{countries.region}</span></h4>
                                         <h4>Capital: <span className="information">{countries.capital}</span></h4>
-                                    </div>
+                                </div>
                                 </NavLink>
                                 </div>
-                        </div>
+                            </div>
                         )
                     })
                 
                 }
-            </div>
         
-               
+            </div>
         </div>
     )
 }

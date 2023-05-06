@@ -10,16 +10,16 @@ export default function Countries(props){
             <div >
                 <NavLink to='/'><button className='BackBtn'>Back</button></NavLink>
             </div>
-           <div className={props.darkMode ? "DarkCont":"Containers"}>
+           <div className={props.darkMode ? "DarkContCountries":"ContainersCountries"}>
                 {
                     data.filter((items)=>items.name === name)
                     .map((countriesMapped)=>{
                         return(
-                <div className="flagContainer">
-                    <img className="flagImg" src={countriesMapped.flag}></img>
-                    <div className="countriesInfo">
+                <div className="flagContainerCountries">
+                       <div className="divImg"><img className="flagImgTwo" src={countriesMapped.flag}></img></div> 
+                    <div className="countriesInfoTwo">
                                 <h2  className='CountryName'>{countriesMapped.name}</h2>
-                        <div>
+                        <div className="InfoDiv">
                             <div>
                                 <h4>Native Name: <span className="information">{countriesMapped.nativeName}</span></h4>
                                 <h4>Population: <span className="information">{countriesMapped.population.toLocaleString()}</span></h4>
@@ -32,17 +32,16 @@ export default function Countries(props){
                                 <h4>Currencies: <span className="information">{countriesMapped.currencies.map((x)=>{return x.name})}</span></h4>
                                 <h4>Languages: <span className="information">{countriesMapped.languages.map((x)=>{return x.name}).toLocaleString()}</span></h4>
                             </div>
-                            <span>
+                        </div>
+                        <div className="spanBorders">
                                 <h3>Border Countries:</h3>
                                 <div className="borderDiv">{countriesMapped.borders ? countriesMapped.borders.map((x)=>{
                                         
-
-                                    return <NavLink to={`/Countries/${countriesMapped.name}`}><div className={props.darkMode? "darkBorderDivTwo":"borderDivTwo"}>
+                                    return <div className={props.darkMode? "darkBorderDivTwo":"borderDivTwo"}>
                                                         {x}
-                                            </div></NavLink>
+                                            </div>
                                 }): "N/A"}</div>
-                            </span>
-                        </div>
+                            </div>
                     </div>
                 
                 </div>
